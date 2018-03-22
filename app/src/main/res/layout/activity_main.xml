@@ -4,21 +4,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#000000"
-    android:padding="16dp"
+    android:padding="24dp"
     tools:context="com.example.android.musicapp.MainActivity">
 
     <LinearLayout
         android:id="@+id/banner"
         android:background="#ECEFF1"
         android:layout_width="match_parent"
-        android:layout_marginBottom="24dp"
+        android:layout_marginBottom="40dp"
         android:layout_height="wrap_content">
 
         <ImageView
             android:id="@+id/headphones"
             android:layout_width="match_parent"
             android:layout_height="150dp"
-
             android:src="@drawable/headphones" />
     </LinearLayout>
 

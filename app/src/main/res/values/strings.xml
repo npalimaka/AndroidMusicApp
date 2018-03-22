@@ -6,4 +6,12 @@
     <string name="jazz">JAZZ</string>
     <string name="rap">RAP</string>
     <string name="metal">METAL</string>
+    <string name="beatles">The Beatles</string>
+    <string name="beatles_song">Let it be</string>
+    <string name="pearljam">Pearl Jam</string>
+    <string name="pj_song">Even Flow</string>
+    <string name="mozart">Wolfgang Amadeus Mozart</string>
+    <string name="mozart_song">Piano Sonata No. 11</string>
+    <string name="twopac">2Pac</string>
+    <string name="twopac_song">Trapped</string>
 </resources>
