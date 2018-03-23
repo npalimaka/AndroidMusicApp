@@ -11,6 +11,9 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by Natalia on 22-Mar-18.
  */
@@ -23,16 +26,28 @@ public class SongAdapter extends ArrayAdapter<Song> {
     @NonNull
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-        View songItemView = convertView;
-        if(songItemView == null){
-            songItemView = LayoutInflater.from(getContext()).inflate(R.layout.song_item, parent, false);
+        ViewHolder holder;
+        if (convertView != null) {
+            holder = (ViewHolder) convertView.getTag();
+        } else {
+            convertView = LayoutInflater.from(getContext()).inflate(R.layout.song_item, parent, false);
+            holder = new ViewHolder(convertView);
+            convertView.setTag(holder);
         }
         Song currentSong = getItem(position);
-        TextView currentArtistView = songItemView.findViewById(R.id.artist_text_view);
-        currentArtistView.setText(currentSong.getArtistName());
-        TextView currentSongNameView = songItemView.findViewById(R.id.song_text_view);
-        currentSongNameView.setText(currentSong.getSongName());
+        holder.currentArtistView.setText(currentSong.getArtistName());
+        holder.currentSongView.setText(currentSong.getSongName());
+        return convertView;
+    }
 
-        return songItemView;
+    static class ViewHolder {
+        @BindView(R.id.artist_text_view)
+        TextView currentArtistView;
+        @BindView(R.id.song_text_view)
+        TextView currentSongView;
+
+        public ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
     }
 }

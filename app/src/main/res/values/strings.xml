@@ -14,4 +14,5 @@
     <string name="mozart_song">Piano Sonata No. 11</string>
     <string name="twopac">2Pac</string>
     <string name="twopac_song">Trapped</string>
+    <string name="current">Now Playing</string>
 </resources>

@@ -9,10 +9,10 @@
 
     <LinearLayout
         android:id="@+id/banner"
-        android:background="#ECEFF1"
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="40dp"
-        android:layout_height="wrap_content">
+        android:background="#ECEFF1">
 
         <ImageView
             android:id="@+id/headphones"

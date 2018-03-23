@@ -11,7 +11,7 @@ public class MusicGenre {
     private int name;
     private int imageResource;
 
-    public MusicGenre(int name, int image){
+    public MusicGenre(int name, int image) {
         this.name = name;
         this.imageResource = image;
     }

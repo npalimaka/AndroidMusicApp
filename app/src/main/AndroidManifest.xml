@@ -24,6 +24,8 @@
             android:label="@string/classic"/>
         <activity android:name=".RapMusicActivity"
             android:label="@string/rap"/>
+        <activity android:name=".CurrentSongActivity"
+            android:label="@string/current"/>
     </application>
 
 </manifest>

@@ -10,12 +10,18 @@ import android.widget.GridView;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 public class MainActivity extends AppCompatActivity {
+    @BindView(R.id.gridview)
+    GridView gridview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         final ArrayList<MusicGenre> genres = new ArrayList<>();
         genres.add(new MusicGenre(R.string.pop, R.drawable.pop));
@@ -23,15 +29,15 @@ public class MainActivity extends AppCompatActivity {
         genres.add(new MusicGenre(R.string.classic, R.drawable.classic));
         genres.add(new MusicGenre(R.string.rap, R.drawable.rap));
 
-        GridView gridView = findViewById(R.id.gridview);
         final MusicGenreAdapter musicGenreAdapter = new MusicGenreAdapter(this, genres);
-        gridView.setAdapter(musicGenreAdapter);
+        gridview.setAdapter(musicGenreAdapter);
 
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        gridview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
                 if (position == 0) {
                     Intent popIntent = new Intent(MainActivity.this, PopMusicActivity.class);
+                    popIntent.putExtra("pop", genres.get(0).getImage());
                     startActivity(popIntent);
                 }
                 if (position == 1) {

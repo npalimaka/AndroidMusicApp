@@ -10,6 +10,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+
 /**
  * Created by Natalia on 20-Mar-18.
  */
@@ -19,7 +22,7 @@ public class MusicGenreAdapter extends BaseAdapter {
     private final Context mContext;
     private final ArrayList<MusicGenre> genres;
 
-    public MusicGenreAdapter(Context context, ArrayList<MusicGenre> genres){
+    public MusicGenreAdapter(Context context, ArrayList<MusicGenre> genres) {
         this.mContext = context;
         this.genres = genres;
     }
@@ -40,21 +43,31 @@ public class MusicGenreAdapter extends BaseAdapter {
     }
 
     @Override
-    public View getView(int position, View convertView, ViewGroup parent){
-       final MusicGenre musicGenre = genres.get(position);
-
-        if (convertView == null) {
-            final LayoutInflater layoutInflater = LayoutInflater.from(mContext);
-            convertView = layoutInflater.inflate(R.layout.genre_view, null);
+    public View getView(int position, View convertView, ViewGroup parent) {
+        final MusicGenre musicGenre = genres.get(position);
+        ViewHolder holder;
+        if (convertView != null) {
+            holder = (ViewHolder) convertView.getTag();
+        } else {
+            LayoutInflater inflater = LayoutInflater.from(mContext);
+            convertView = inflater.inflate(R.layout.genre_view, null);
+            holder = new ViewHolder(convertView);
+            convertView.setTag(holder);
         }
-
-        final ImageView musicGenreImage = convertView.findViewById(R.id.specified_genre_image);
-        final TextView musicGenreName = convertView.findViewById(R.id.specified_genre_name);
-
-        musicGenreImage.setImageResource(musicGenre.getImage());
-        musicGenreName.setText(mContext.getString(musicGenre.getName()));
+        holder.musicGenreImage.setImageResource(musicGenre.getImage());
+        holder.musicGenreName.setText(mContext.getString(musicGenre.getName()));
 
         return convertView;
+    }
 
+    static class ViewHolder {
+        @BindView(R.id.specified_genre_image)
+        ImageView musicGenreImage;
+        @BindView(R.id.specified_genre_name)
+        TextView musicGenreName;
+
+        public ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
     }
 }
