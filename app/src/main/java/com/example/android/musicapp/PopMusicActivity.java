@@ -39,7 +39,7 @@ public class PopMusicActivity extends AppCompatActivity {
                 Intent intent = new Intent(PopMusicActivity.this, CurrentSongActivity.class);
                 intent.putExtra("artist", songs.get(i).getArtistName());
                 intent.putExtra("song", songs.get(i).getSongName());
-                intent.putExtra("pop", getIntent().getIntExtra("pop", 0));
+                intent.putExtra("genre", getIntent().getIntExtra("pop", 0));
                 startActivity(intent);
             }
         });

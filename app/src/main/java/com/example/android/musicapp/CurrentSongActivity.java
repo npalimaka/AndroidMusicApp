@@ -2,8 +2,10 @@ package com.example.android.musicapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.ContactsContract;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -21,6 +23,13 @@ public class CurrentSongActivity extends AppCompatActivity {
     TextView song_name;
     @BindView(R.id.song_image)
     ImageView song_image;
+    @BindView(R.id.rewind)
+    ImageView rewind;
+    @BindView(R.id.play_arrow)
+    ImageView play_to_pause;
+    @BindView(R.id.forward)
+    ImageView forward;
+    boolean paused;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -28,8 +37,21 @@ public class CurrentSongActivity extends AppCompatActivity {
         setContentView(R.layout.current_song_view);
         ButterKnife.bind(this);
 
-        song_image.setImageResource(getIntent().getIntExtra("pop", 0));
+        song_image.setImageResource(getIntent().getIntExtra("genre", 0));
         artist_name.setText(getIntent().getIntExtra("artist", 0));
         song_name.setText(getIntent().getIntExtra("song", 0));
+
+        play_to_pause.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(!paused) {
+                    play_to_pause.setImageResource(R.drawable.pause);
+                    paused = true;
+                }else {
+                    play_to_pause.setImageResource(R.drawable.play_arrow);
+                    paused = false;
+                }
+            }
+        });
     }
 }

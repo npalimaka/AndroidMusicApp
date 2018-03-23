@@ -1,8 +1,11 @@
 package com.example.android.musicapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -24,10 +27,21 @@ public class ClassicMusicActivity extends AppCompatActivity {
         setContentView(R.layout.songs_list);
         ButterKnife.bind(this);
 
-        ArrayList<Song> songs = new ArrayList<>();
+        final ArrayList<Song> songs = new ArrayList<>();
         songs.add(new Song(R.string.mozart, R.string.mozart_song));
 
         SongAdapter songAdapter = new SongAdapter(ClassicMusicActivity.this, songs);
         songView.setAdapter(songAdapter);
+
+        songView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Intent intent = new Intent(ClassicMusicActivity.this, CurrentSongActivity.class);
+                intent.putExtra("artist", songs.get(i).getArtistName());
+                intent.putExtra("song", songs.get(i).getSongName());
+                intent.putExtra("genre", getIntent().getIntExtra("classic", 0));
+                startActivity(intent);
+            }
+        });
     }
 }

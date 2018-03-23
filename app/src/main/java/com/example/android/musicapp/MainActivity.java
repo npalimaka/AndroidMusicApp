@@ -42,14 +42,17 @@ public class MainActivity extends AppCompatActivity {
                 }
                 if (position == 1) {
                     Intent rockIntent = new Intent(MainActivity.this, RockMusicActivity.class);
+                    rockIntent.putExtra("rock", genres.get(1).getImage());
                     startActivity(rockIntent);
                 }
                 if (position == 2) {
                     Intent classicIntent = new Intent(MainActivity.this, ClassicMusicActivity.class);
+                    classicIntent.putExtra("classic", genres.get(2).getImage());
                     startActivity(classicIntent);
                 }
                 if (position == 3) {
                     Intent rapIntent = new Intent(MainActivity.this, RapMusicActivity.class);
+                    rapIntent.putExtra("rap", genres.get(3).getImage());
                     startActivity(rapIntent);
                 }
             }
