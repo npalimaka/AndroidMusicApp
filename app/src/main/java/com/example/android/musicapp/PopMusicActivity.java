@@ -29,6 +29,13 @@ public class PopMusicActivity extends AppCompatActivity {
 
         final ArrayList<Song> songs = new ArrayList<>();
         songs.add(new Song(R.string.beatles, R.string.beatles_song));
+        songs.add(new Song(R.string.madonna, R.string.madonna_song));
+        songs.add(new Song(R.string.cher, R.string.cher_song));
+        songs.add(new Song(R.string.dido, R.string.dido_song));
+        songs.add(new Song(R.string.robbie, R.string.robbie_song));
+        songs.add(new Song(R.string.jackson, R.string.jackson_song));
+        songs.add(new Song(R.string.abba, R.string.abba_song));
+        songs.add(new Song(R.string.blunt, R.string.blunt_song));
 
         SongAdapter songAdapter = new SongAdapter(PopMusicActivity.this, songs);
         songView.setAdapter(songAdapter);

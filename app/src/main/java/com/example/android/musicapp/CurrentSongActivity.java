@@ -44,11 +44,11 @@ public class CurrentSongActivity extends AppCompatActivity {
         play_to_pause.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!paused) {
-                    play_to_pause.setImageResource(R.drawable.pause);
+                if (!paused) {
+                    play_to_pause.setImageResource(R.mipmap.ic_pause_black_18dp);
                     paused = true;
-                }else {
-                    play_to_pause.setImageResource(R.drawable.play_arrow);
+                } else {
+                    play_to_pause.setImageResource(R.mipmap.ic_play_arrow_black_18dp);
                     paused = false;
                 }
             }

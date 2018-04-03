@@ -29,6 +29,16 @@ public class RockMusicActivity extends AppCompatActivity {
 
         final ArrayList<Song> songs = new ArrayList<>();
         songs.add(new Song(R.string.pearljam, R.string.pj_song));
+        songs.add(new Song(R.string.purple, R.string.purple_song));
+        songs.add(new Song(R.string.lp, R.string.lp_song));
+        songs.add(new Song(R.string.ledzep, R.string.ledzep_song));
+        songs.add(new Song(R.string.porcupine, R.string.porcupine_song));
+        songs.add(new Song(R.string.foo, R.string.foo_song));
+        songs.add(new Song(R.string.queen, R.string.queen_song));
+        songs.add(new Song(R.string.muse, R.string.muse_song));
+        songs.add(new Song(R.string.thirty, R.string.thirty_song));
+        songs.add(new Song(R.string.radiohead, R.string.radiohead_song));
+        songs.add(new Song(R.string.rem, R.string.rem_song));
 
         SongAdapter songAdapter = new SongAdapter(RockMusicActivity.this, songs);
         songView.setAdapter(songAdapter);

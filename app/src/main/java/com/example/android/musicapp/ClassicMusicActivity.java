@@ -9,6 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -29,6 +30,15 @@ public class ClassicMusicActivity extends AppCompatActivity {
 
         final ArrayList<Song> songs = new ArrayList<>();
         songs.add(new Song(R.string.mozart, R.string.mozart_song));
+        songs.add(new Song(R.string.chopin, R.string.chopin_song));
+        songs.add(new Song(R.string.bach, R.string.bach_song));
+        songs.add(new Song(R.string.beethoven, R.string.beethoven_song));
+        songs.add(new Song(R.string.cataldo, R.string.cataldo_song));
+        songs.add(new Song(R.string.debussy, R.string.debussy_song));
+        songs.add(new Song(R.string.elgar, R.string.elgar_song));
+        songs.add(new Song(R.string.schubert, R.string.schubert_song));
+        songs.add(new Song(R.string.vivaldi, R.string.vivaldi_song));
+        songs.add(new Song(R.string.wagner, R.string.wagner_song));
 
         SongAdapter songAdapter = new SongAdapter(ClassicMusicActivity.this, songs);
         songView.setAdapter(songAdapter);

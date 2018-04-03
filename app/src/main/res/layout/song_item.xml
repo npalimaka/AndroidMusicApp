@@ -29,5 +29,5 @@
         android:layout_height="20dp"
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
-        android:src="@drawable/play_arrow" />
+        android:src="@mipmap/ic_play_arrow_black_18dp" />
 </RelativeLayout>

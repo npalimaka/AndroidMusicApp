@@ -29,6 +29,13 @@ public class RapMusicActivity extends AppCompatActivity {
 
         final ArrayList<Song> songs = new ArrayList<>();
         songs.add(new Song(R.string.twopac, R.string.twopac_song));
+        songs.add(new Song(R.string.eminem, R.string.eminem_song));
+        songs.add(new Song(R.string.beastie, R.string.beastie_song));
+        songs.add(new Song(R.string.cent, R.string.cent_song));
+        songs.add(new Song(R.string.dre, R.string.dre_song));
+        songs.add(new Song(R.string.kanye, R.string.kanye_song));
+        songs.add(new Song(R.string.outkast, R.string.outkast_song));
+        songs.add(new Song(R.string.cypress, R.string.cypress_song));
 
         SongAdapter songAdapter = new SongAdapter(RapMusicActivity.this, songs);
         songView.setAdapter(songAdapter);
