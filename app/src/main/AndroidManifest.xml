@@ -17,15 +17,20 @@
             </intent-filter>
         </activity>
         <activity android:name=".PopMusicActivity"
-            android:label="@string/pop"/>
+            android:label="@string/pop"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".RockMusicActivity"
-            android:label="@string/rock"/>
+            android:label="@string/rock"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".ClassicMusicActivity"
-            android:label="@string/classic"/>
+            android:label="@string/classic"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".RapMusicActivity"
-            android:label="@string/rap"/>
+            android:label="@string/rap"
+            android:parentActivityName=".MainActivity"/>
         <activity android:name=".CurrentSongActivity"
-            android:label="@string/current"/>
+            android:label="@string/current"
+            android:parentActivityName=".MainActivity"/>
     </application>
 
 </manifest>

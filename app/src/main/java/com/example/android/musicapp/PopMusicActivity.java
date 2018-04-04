@@ -1,11 +1,13 @@
 package com.example.android.musicapp;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.ArrayList;
@@ -26,6 +28,7 @@ public class PopMusicActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.songs_list);
         ButterKnife.bind(this);
+      //  getActionBar().setDisplayHomeAsUpEnabled(true);
 
         final ArrayList<Song> songs = new ArrayList<>();
         songs.add(new Song(R.string.beatles, R.string.beatles_song));
